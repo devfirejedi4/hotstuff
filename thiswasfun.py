@@ -56,7 +56,7 @@ def update_region(max_row, max_col, part, rank, ghosts):
     return [new_part, max_diff]
 
 if __name__ == "__main__":
-    # initialize a 1024x2048 region
+    # initialize a region
     region = []
 
     # populate region with initial vals
@@ -64,9 +64,9 @@ if __name__ == "__main__":
         region.append([])
         for col in range(0, COLS):
             # top: row == 0
-            # bottom: row == row == 1024-1
+            # bottom: row == ROWS-1
             # left: col == 0
-            # right: col == 2048-1
+            # right: col == COLS-1
             if row == 0 or row == ROWS - 1 or col == 0 or col == COLS - 1:
                 region[row].append(1.0)
             else:
